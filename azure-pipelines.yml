@@ -39,7 +39,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: publish
-    projects: 'DevopsNew/APICheck/*.csproj'
+    projects: '**/*.csproj'
     publishWebProjects: False
     arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: True
