@@ -21,7 +21,9 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
-
+- task: MSBuild@1
+  inputs:
+    solution: '**/*.sln'
 
 # ...
 # do this after you've built your app, near the end of your pipeline in most cases
