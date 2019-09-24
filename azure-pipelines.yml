@@ -40,4 +40,3 @@ steps:
     appType: 'apiApp'
     WebAppName: 'DevOpsAPITest'
     packageForLinux:'$(System.DefaultWorkingDirectory)/**/*.zip'
-
