@@ -20,21 +20,17 @@ steps:
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
-
-- task: MSBuild@1
+- task: VSBuild@1
   inputs:
-    solution: '**/*.sln'
+    solution: '$(solution)'
+    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
 
-# ...
-# do this after you've built your app, near the end of your pipeline in most cases
-# for example, you do this before you deploy to an Azure web app on Windows
-- task: DotNetCoreCLI@2
-  inputs:
-    command: publish
-    projects: '**/*.csproj'
-    publishWebProjects: false
-    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
-    zipAfterPublish: true
+
+
+
+
 
 - task: PublishBuildArtifacts@1
   displayName: 'publish artifacs'
