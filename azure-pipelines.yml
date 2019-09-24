@@ -39,4 +39,4 @@ steps:
     azureSubscription: 'Free Trial(17e8a13c-50af-4059-ada1-eb2e2551f24e)'
     appType: 'apiApp'
     WebAppName: 'DevOpsAPITest'
-    packageForLinux:'$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
