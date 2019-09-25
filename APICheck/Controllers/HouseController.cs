@@ -11,7 +11,7 @@ namespace APICheck.Controllers
     {
         public IEnumerable<string> Get()
         {
-            return new string[] {"Shubhang","Avinash" };
+            return new string[] {"Shubhang","Avinash","Siva" };
         }
     }
 }
